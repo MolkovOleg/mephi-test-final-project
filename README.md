@@ -70,7 +70,7 @@ src/test/resources/
 ### Web (Selenium)
 - JDK 11+ или выше
 - Maven 4.0.0
-- Google Chrome
+- Safari
 - WebDriver настраивается автоматически через **WebDriverManager**
 
 ### Mobile (Appium + Android Emulator)
@@ -88,8 +88,8 @@ src/test/resources/
 
 ### 1) Клонирование репозитория
 ```bash
-git clone https://github.com/amasovich/mifi-ui-testing-final-project.git
-cd mifi-ui-testing-final-project
+git clone https://github.com/MolkovOleg/mephi-test-final-project
+cd mephi-test-final-project
 ```
 
 ### 2) Установка зависимостей
@@ -107,7 +107,7 @@ mvn clean install "-DskipTests"
 Пример:
 ```properties
 base.url=https://yandex.ru/pogoda
-browser=chrome
+browser=safari
 timeout.seconds=10
 ```
 
@@ -121,12 +121,6 @@ mvn test "-Dtest=OpenWeatherPageTest,OpenCityWeatherPageTest,NavigationMenuTest,
 ```bash
 mvn test "-Dtest=OpenWeatherPageTest"
 ```
-
-### Пример успешного прогона
-
-![Web tests passed](screenshots/web-all-tests-ok.png)
-
----
 
 ## Mobile UI тестирование
 
@@ -168,10 +162,6 @@ appium --address 127.0.0.1 --port 4723
 adb devices
 ```
 
-Пример (эмулятор запущен):
-
-![Android Emulator started](screenshots/start-mobile-emulator.png)
-
 ### Установка Wikipedia APK (если требуется)
 Если приложение не установлено:
 ```bash
@@ -188,10 +178,6 @@ mvn test "-Dtest=AppLaunchTest,SearchTest,OpenArticleTest,ScrollArticleTest"
 ```bash
 mvn test "-Dtest=OpenArticleTest"
 ```
-
-### Пример успешного прогона
-
-![Mobile tests passed](screenshots/mobile-all-tests-ok.png)
 
 > Примечание: предупреждение `SLF4J(W): No SLF4J providers were found` не влияет на выполнение тестов — логирование в проекте выполняется через `System.out.println`.
 
